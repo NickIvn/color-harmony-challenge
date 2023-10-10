@@ -1,1 +1,1 @@
-https://nickivn.github.io/color-harmony-challenge/color-harmony/
+https://nickivn.github.io/color-harmony-challenge/color-harmony/index.hmtl
