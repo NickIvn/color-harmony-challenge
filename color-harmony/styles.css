@@ -213,17 +213,17 @@ footer {
     }
 
     .color, .text {
-        width: 20vw;
-        height: 10vw;
-        font-size: 5vw;
+        width: 30vw;
+        height: 15vw;
+        font-size: 8vw;
         padding: 10px 0;
     }
 
     #yes, #no {
-        width: 10vw;
+        width: 20vw;
         height: fit-content;
-        font-size: 3vw;
-        padding: 5px 5px;
+        font-size: 4vw;
+        padding: 15px 5px;
     }
 
    .start-button {
