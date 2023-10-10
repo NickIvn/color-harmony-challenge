@@ -92,7 +92,7 @@ h1 {
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    animation: shimmer 2s infinite linear;
+    /* animation: shimmer 2s infinite linear; */
     font-family: 'Montserrat';
     font-weight: bold;
     text-align: center;
