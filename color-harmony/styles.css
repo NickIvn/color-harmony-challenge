@@ -213,6 +213,11 @@ footer {
         font-size: 150%;
     }
 
+    .info {
+        width: 360px;
+        font-size: 20px;
+    }
+
     h1 {
         font-size: 7vw;
     }
@@ -232,8 +237,8 @@ footer {
     }
 
    .start-button {
-    width: 70px;
-    height: 70px;
-    font-size: 22px;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
    }
 }
