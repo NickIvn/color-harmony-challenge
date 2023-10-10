@@ -1,50 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Nova+Flat&family=Montserrat&display=swap');
 body {
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     box-sizing: border-box;
+    font-family: 'Montserrat', cursive;
+    background-image: url(assets/images/bg-img.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60vw;
-    height: 40vw;
-    background-color: rgba(141, 141, 141, 0.3);
+    width: 800px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.2);
     margin: 40px auto;
+    border-radius: 15px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .table {
+    position: relative;
+    display: block;
+    margin: auto;
+    font-size: 32px;
+    color: #ECA1B4;
+    text-shadow: 2px 2px 2px #7CB9CD;
+    font-family: 'Montserrat';
+    text-align: center;
+  }
+
+  .close {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  td {
+    padding: 5px 20px;
+    text-align: left;
+  }
+
+@keyframes shimmer {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  header {
+    background-color: rgba(230, 228, 228, 0.3);
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+h1 {
+    font-size: 400%;
+    background: linear-gradient(45deg, #f00, #0f0, #00f, #f00);
+    background-size: 200% 200%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmer 2s infinite linear;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    text-align: center;
 }
 
 .content {
     display: flex;
 }
 
+.info {
+    display: flex;
+    margin-top: 40px;
+    justify-content:space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    width: 400px;
+}
+
+.timer {
+    width: 280px;
+    text-align: left;
+}
+
+.score {
+    width: 150px;
+    text-align: left;
+}
+
 .color, .text {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20vw;
-    height: 10vw;
+    width: 200px;
+    height: 120px;
     background-color: #fff;
     margin: 20px;
-    font-size: 200%;
+    font-size: 48px;
     font-weight: bold;
+    border-radius: 15px;
+    font-family: 'Alatsi', sans-serif;
+}
+
+.title {
+    font-size: 180%;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 4px black;
 }
 
 .button-container {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
-button {
-    width: 10vw;
-    height: 5vw;
+#yes, #no {
+    min-width: fit-content;
+    height: fit-content;
     background-color: #fff;
     border: none;
     margin: 10px;
     cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(90, 90, 90);
+    padding: 5px 10px;
 }
 
-button:hover {
-    transform: scale(1.1);
-    transition: transform 0.5s ease;
+.start-button {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+    box-shadow: inset -5px -5px 2px rgba(102, 102, 102, 0.2);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(90, 90, 90);
+    margin-bottom: 10px;
+}
+
+.correct, .uncorrect {
+    position: absolute;
+    bottom: 10px;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+footer {
+    position: absolute;
+    flex-shrink: 0;
+    bottom: 10px;
+    left: 0;
+    width: 100vw;
+    text-shadow: 2px 2px 2px rgb(68, 68, 68);
+    text-align: center;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    font-style: italic;
+}
+
+@media (max-width: 840px) {
+    .container {
+        width: 80vw;
+        height: auto;
+        padding: 80px 10px;
+    }
+
+    .title {
+        font-size: 150%;
+    }
+
+    h1 {
+        font-size: 7vw;
+    }
+
+    .color, .text {
+        width: 20vw;
+        height: 10vw;
+        font-size: 5vw;
+        padding: 10px 0;
+    }
+
+    #yes, #no {
+        width: 10vw;
+        height: fit-content;
+        font-size: 3vw;
+        padding: 5px 5px;
+    }
+
+   .start-button {
+    width: 70px;
+    height: 70px;
+    font-size: 22px;
+   }
 }
