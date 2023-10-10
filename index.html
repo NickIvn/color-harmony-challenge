@@ -3,25 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Color Harmony Challenge</title>
 </head>
 <body>
-    <h1>Color Harmony Challenge</h1>
-    <div class="info">
-        <div class="timer">Remaining time: 00:00</div>
-        <div class="score">Score: 0</div>
-    </div>
-    <div class="container">
-        <div class="content">
-            <div class="color"></div>
-            <div class="text"></div>
+    <header>
+        <h1>Color Harmony Challenge</h1>
+    </header>
+    <main>
+        <div class="modal">
+            <div class="table">
+                <table>
+                    <p>Best results:</p>
+                    <div class="close">close</div>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div class="button-container">
-            <button type="button" id="yes">YES</button>
-            <button type="button" id="no">NO</button>
+        <div class="info">
+            <button class="start-button">Start</button>
+            <div class="info-container">
+                <div class="timer">Remaining time: 01:00</div>
+                <div class="score">Score: 0</div>
+            </div>
         </div>
-    </div>
+        <div class="container">
+            <div class="title">Does the color on the left match the name on the right?</div>
+            <div class="content">
+                <div class="color"></div>
+                <div class="text"></div>
+            </div>
+            <div class="button-container">
+                <button type="button" id="yes">YES</button>
+                <button type="button" id="no">NO</button>
+            </div>
+            <div class="correct" style="display: none;"><img src="assets/icons/correct.png"></div>
+            <div class="uncorrect" style="display: none;"><img src="assets/icons/uncorrect.png"></div>
+        </div>
+    </main>
+    <footer>
+        <div class="results">Best results</div>
+    </footer>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
