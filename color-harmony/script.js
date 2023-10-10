@@ -28,47 +28,58 @@ function startGame() {
     disagree.addEventListener('click', disagreeClickHandler);
 }
 
-function changeCards() {
-    color.textContent = colors[Math.floor(Math.random() * colors.length)].toUpperCase();
-    color.style.color = colors[Math.floor(Math.random() * colors.length)];
-    text.textContent = colors[Math.floor(Math.random() * colors.length)].toUpperCase();
-    text.style.color = colors[Math.floor(Math.random() * colors.length)];
+function randomizeColor() {
+  return colors[Math.floor(Math.random() * colors.length)];
 }
 
-function agreeClickHandler() {
-    if(color.style.color.toUpperCase() === text.textContent) {
-        console.log('yes');
-        correct.style.display = 'block';
+function changeCards() {
+    color.textContent = randomizeColor().toUpperCase();
+    color.style.color = randomizeColor()
+    text.textContent = randomizeColor().toUpperCase();
+    text.style.color = randomizeColor()
+}
+
+function showCorrectIcon() {
+  correct.style.display = 'block';
         setTimeout(() => {
             correct.style.display = 'none';
         }, 300)
-        score = score + 1;
-        scoreInfo.textContent = `Score: ${score}`;
+};
+
+function showUncorrectIcon() {
+  uncorrect.style.display = 'block';
+  setTimeout(() => {
+      uncorrect.style.display = 'none';
+  }, 300);
+};
+
+function showScoreInfo() {
+  scoreInfo.textContent = `Score: ${score}`;
         changeCards();
+};
+
+function agreeClickHandler() {
+    if(color.style.color.toUpperCase() === text.textContent) {
+        // correct.style.display = 'block';
+        // setTimeout(() => {
+        //     correct.style.display = 'none';
+        // }, 300)
+        showCorrectIcon();
+        score = score + 1;
+        showScoreInfo();
     } else {
-        uncorrect.style.display = 'block';
-        setTimeout(() => {
-            uncorrect.style.display = 'none';
-        }, 300);
+        showUncorrectIcon();
         changeCards();
     }
 }
 
 function disagreeClickHandler() {
     if(color.style.color.toUpperCase() !== text.textContent) {
-        console.log('no');
         score = score + 1;
-        correct.style.display = 'block';
-        setTimeout(() => {
-            correct.style.display = 'none';
-        }, 300)
-        scoreInfo.textContent = `Score: ${score}`;
-        changeCards();
+        showCorrectIcon();
+        showScoreInfo();
     } else {
-        uncorrect.style.display = 'block';
-        setTimeout(() => {
-            uncorrect.style.display = 'none';
-        }, 300);
+        showUncorrectIcon();
         changeCards();
     }
 }
